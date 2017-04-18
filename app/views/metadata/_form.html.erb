@@ -1,0 +1,32 @@
+<%= form_for(metadatum) do |f| %>
+  <% if metadatum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(metadatum.errors.count, "error") %> prohibited this metadatum from being saved:</h2>
+
+      <ul>
+      <% metadatum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entry_id %>
+    <%= f.text_field :entry_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :meta_rule_id %>
+    <%= f.text_field :meta_rule_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary btn-xs" %>
+  </div>
+<% end %>

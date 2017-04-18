@@ -1,0 +1,32 @@
+<%= form_for(entry) do |f| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+      <% entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.select :state, enum_option_pairs(Entry, :state) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :platform %>
+    <%= f.text_field :platform %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary btn-xs" %>
+  </div>
+<% end %>

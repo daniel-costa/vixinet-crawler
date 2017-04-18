@@ -1,0 +1,20 @@
+<h1>Dashboard</h1>
+
+<table class="table table-condensed table-bordered">
+	<tr>
+		<th>Entries</th>
+		<td><%=  number_with_delimiter(Entry.count()) %></td>
+	</tr>
+	<tr>
+		<th>Pending</th>
+		<td><%=  number_with_delimiter(Entry.pendings.count()) %></td>
+	</tr>
+	<tr>
+		<th>Crawled</th>
+		<td><%=  number_with_delimiter(Entry.crawleds.count()) %></td>
+	</tr>
+	<tr>
+		<th>URL Unknown</th>
+		<td></td>
+	</tr>
+</table>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry: one
+  meta_rule: one
+  value: MyString
+
+two:
+  entry: two
+  meta_rule: two
+  value: MyString

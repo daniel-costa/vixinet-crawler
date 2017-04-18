@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Platforms</h1>
+
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Base url</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @platforms.each do |platform| %>
+      <tr>
+        <td><%= platform.name %></td>
+        <td><%= platform.base_url %></td>
+        <td><%= link_to 'Show', platform %></td>
+        <td><%= link_to 'Edit', edit_platform_path(platform) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<%= link_to 'New Platform', new_platform_path, class: "btn btn-primary btn-xs" %>

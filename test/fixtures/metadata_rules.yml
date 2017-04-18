@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  platform: one
+  name: MyString
+  regex: MyString
+  xpath: MyString
+  css: MyString
+
+two:
+  platform: two
+  name: MyString
+  regex: MyString
+  xpath: MyString
+  css: MyString

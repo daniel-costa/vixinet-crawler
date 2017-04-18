@@ -1,0 +1,2 @@
+module MetadataRulesHelper
+end

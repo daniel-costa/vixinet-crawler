@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @entry.url %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @entry.state %>
+</p>
+
+<p>
+  <strong>Platform:</strong>
+  <%= @entry.platform.name if @entry.platform %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @entry.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @entry.updated_at %>
+</p>
+
+<%= link_to 'Crawl', crawl_entry_path(@entry), class: "btn btn-success btn-xs" %>
+<%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-primary btn-xs" %>
+<%= link_to 'Back', entries_path, class: "btn btn-default btn-xs" %>
+
+<hr>
+
+<h1>Metadata</h1>
+
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entry.metadatum.each do |metadatum| %>
+      <tr>
+        <td><%= metadatum.name %></td>
+        <td style="max-width: 500px;overflow:auto"><%= metadatum.value %></td>
+        <td><%= metadatum.created_at %></td>
+        <td><%= metadatum.updated_at %></td>
+        <td><%= link_to 'Destroy', metadatum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VixiCrawler</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<div class="container-fluid">
+  	<br/>
+	  	<%= link_to :dashboard, root_path, class: "btn btn-default btn-xs"  %>
+	  	<%= link_to :platforms, platforms_path, class: "btn btn-default btn-xs"  %>
+	  	<%= link_to :entries, entries_path, class: "btn btn-default btn-xs" %>
+	  	<hr/>
+	    <%= yield %>
+    </div>
+  </body>
+</html>

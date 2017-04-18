@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entries</h1>
+
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>State</th>
+      <th>Platform</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.url %></td>
+        <td><%= entry.state %></td>
+        <td><%= entry.platform.name if entry.platform %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Crawl', crawl_entry_path(entry) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @entries %>
+
+<hr>
+
+<%= link_to 'New Entry', new_entry_path, class: "btn btn-primary btn-xs" %>
+

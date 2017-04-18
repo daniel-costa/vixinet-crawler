@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @platform.name %>
+</p>
+
+<p>
+  <strong>Base url:</strong>
+  <%= @platform.base_url %>
+</p>
+
+<p>
+  <strong>Entry validation:</strong>
+  <%= @platform.entry_validation %>
+</p>
+
+<p>
+  <strong>Harvest:</strong>
+  <%= @platform.harvest %>
+</p>
+
+<%= link_to 'Edit', edit_platform_path(@platform), class: "btn btn-primary btn-xs" %>
+<%= link_to 'Back', platforms_path, class: "btn btn-default btn-xs" %>
+
+<hr>
+
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Regex</th>
+      <th>Xpath</th>
+      <th>Css</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @platform.metadata_rules.each do |metadata_rule| %>
+      <tr>
+        <td><%= metadata_rule.name %></td>
+        <td><%= metadata_rule.regex %></td>
+        <td><%= metadata_rule.xpath %></td>
+        <td><%= metadata_rule.css %></td>
+        <td><%= link_to 'Edit', edit_metadata_rule_path(metadata_rule) %></td>
+        <td><%= link_to 'Destroy', metadata_rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<%= link_to 'New Metadata Rule', new_platform_metadata_rule_path(@platform), class: "btn btn-primary btn-xs" %>
